@@ -19,6 +19,19 @@
    \emph{\color{purple} #1}
 }
 
+\newenvironment{magic}[3]{
+   \begin{table}[!h]
+      \caption{#2}
+      \label{#3}
+      \centering
+      \LARGE
+      \begin{tabular}{|*{#1}{c|}}
+         \hline
+}{
+\end{tabular}
+\end{table}
+}
+
 % Nastavimo koliko prostora izpustimo pod napisom nad sliko ali tabelo.
 \setlength{\belowcaptionskip}{2mm}
 % Nastavimo odmik prve vrstice v odstavku na 0mm.
@@ -319,11 +332,14 @@ magični kvadrati redov 5, 6 in 9.
 
 % - napis nad tabelo: Magični kvadrat reda 5
 % - oznaka: table:mag5
-%   17 & 24 &  1 &  8 & 15 \\\hline
-%   23 &  5 &  7 & 14 & 16 \\\hline
-%    4 &  6 & 13 & 20 & 22 \\\hline
-%   10 & 12 & 19 & 21 &  3 \\\hline
-%   11 & 18 & 25 &  2 &  9 \\\hline
+\begin{magic}{5}{Magični kvadrat reda 5}{table:mag5}
+   %[5][Magični kvadrat reda 5][table:mag5]
+   17 & 24 &  1 &  8 & 15 \\\hline
+   23 &  5 &  7 & 14 & 16 \\\hline
+    4 &  6 & 13 & 20 & 22 \\\hline
+   10 & 12 & 19 & 21 &  3 \\\hline
+   11 & 18 & 25 &  2 &  9 \\\hline
+\end{magic}
 
 % - napis nad tabelo: Magični kvadrat reda 6
 % - oznaka: table:mag6
